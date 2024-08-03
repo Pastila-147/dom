@@ -1,5 +1,5 @@
 
-class GameBoard {
+export default class GameBoard {
   constructor(container) {
     this.container = container;
   }

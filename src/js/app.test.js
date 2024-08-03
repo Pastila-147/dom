@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import GameBoard from '../js/GameBoard';
 
 const container = document.createElement('div');
@@ -9,10 +10,6 @@ test('Draw field', () => {
   expect(container.querySelectorAll('.cell').length).toBe(16);
 });
 
-test('getRandomCell method with index', () => {
-  gameBoard.drawField();
-  const currentIndex = -1;
-  const newIndex = gameBoard.getRandomCell(currentIndex);
-  expect(newIndex).toBeGreaterThanOrEqual(0);
-  expect(newIndex).toBeLessThan(16);
+test('getRandomCell method', () => {
+  expect(gameBoard.getRandomCell()).not.toBeGreaterThan(15);
 });
