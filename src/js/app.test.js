@@ -1,11 +1,18 @@
-import demo from "./app";
+import GameBoard from '../js/GameBoard';
 
-describe("Пример теста", () => {
-  test.each([
-    { str: "Hello!", expected: "Demo: Hello!" },
-    { str: "", expected: "Demo: " },
-    { str: 100, expected: "Demo: 100" },
-  ])("demo($str)", ({ str, expected }) => {
-    expect(demo(str)).toBe(expected);
-  });
+const container = document.createElement('div');
+container.id = 'game-board-container';
+const gameBoard = new GameBoard(container);
+
+test('Draw field', () => {
+  gameBoard.drawField();
+  expect(container.querySelectorAll('.cell').length).toBe(16);
+});
+
+test('getRandomCell method with index', () => {
+  gameBoard.drawField();
+  const currentIndex = -1;
+  const newIndex = gameBoard.getRandomCell(currentIndex);
+  expect(newIndex).toBeGreaterThanOrEqual(0);
+  expect(newIndex).toBeLessThan(16);
 });

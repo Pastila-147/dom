@@ -1,11 +1,6 @@
-// TODO: write code here
+import GameBoard from './GameBoard';
 
-// comment this to pass build
-const unusedVariable = "variable";
-
-// for demonstration purpose only
-export default function demo(value) {
-  return `Demo: ${value}`;
-}
-
-console.log("app.js included");
+const container = document.querySelector('.game-board-container');
+const gameBoard = new GameBoard(container);
+gameBoard.drawField();
+gameBoard.moveGoblin();

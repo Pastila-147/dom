@@ -1,3 +1,23 @@
-body {
-    color: #999;
+
+.game-board-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 624px;
+  height: 624px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cell {
+  background-color: rgb(66, 232, 238);
+  width: 150px;
+  height: 150px;
+  margin: 3px;
+}
+
+.active {
+  background-image: url('../png/goblin.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
